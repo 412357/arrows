@@ -1,3 +1,16 @@
-.row {
+.cell {
     background-color: lightgoldenrodyellow;
+    min-width: 60px;
+    min-height: 60px;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.cell:focus,
+.cell:hover {
+    box-shadow: 0px 0px 1px 2px red;
+}
+
+.contentWrapper {
+    border: 1px black solid;
 }

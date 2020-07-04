@@ -1,0 +1,5 @@
+.board {
+    border: solid 2px green;
+    padding: 1px;
+    box-sizing: border-box;
+}

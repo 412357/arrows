@@ -6,8 +6,14 @@ import GameSettingsContext from '../../state/context/GameSettingsContext'
 import styles from './Row.module.css'
 
 export default function Row({ rowIndex }) {
-    const { settings: { cols } } = useContext(GameSettingsContext)
-    const cellComponents = [...Array(cols)].map((e, i) => <Cell key={i} y={rowIndex} x={i} />)
+    const { settings: { cols, p1Position, p2Position } } = useContext(GameSettingsContext)
+
+    // TODO: split as hook useCellComponents(rowIndex)
+    const cellComponents = [...Array(cols)].map((e, i) => {
+        const cellProps = { key: i, y: rowIndex, x: i }
+        // TODO: renderMarks function based on x,y player positions
+        return <Cell {...cellProps}/>
+    })
     return (
         <tr className={styles.row}>
             {cellComponents}
